@@ -89,7 +89,7 @@ const SignUp = () => {
 
                 <div className="flex justify-center items-center flex-col rounded w-full bg-white p-4 border border-gray-primary">
                     <p className="text-sm">Have an account?{` `}
-                        <Link to={ROUTES.LOGIN} className="font-bold text-blue-medium">Sign up</Link>
+                        <Link to={ROUTES.LOGIN} className="font-bold text-blue-medium">Login</Link>
                     </p>
                 </div>
             </div>
