@@ -28,7 +28,7 @@ const Action = ({ docId, totalLikes, likedPhoto, handleFocus }) => {
 
     return (
         <>
-            <div className="flex justify-between p-4">
+            <div className="flex justify-between pl-4 p-1 lg:p-4">
                 <div className="flex">
                     <svg
                         data-testid={`like-photo-${docId}`}
