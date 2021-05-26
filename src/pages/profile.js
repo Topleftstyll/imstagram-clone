@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router-dom';
 import { getUserByUsername } from '../services/firebase';
 import * as ROUTES from '../constants/routes';
 import Header from '../components/header';
@@ -9,6 +9,7 @@ const Profile = () => {
     const { username } = useParams();
     const [user, setUser] = useState(null);
     const history = useHistory();
+    console.log('username: ' + username);
 
     useEffect(() => {
         const checkUserExists = async () => {
@@ -22,7 +23,7 @@ const Profile = () => {
         checkUserExists();
     }, [username, history]);
 
-    return (user?.userId ? (
+    return (user?.username ? (
             <div className="bg-gray-background">
                 <Header />
                 <div className="mx-auto max-w-screen-lg">

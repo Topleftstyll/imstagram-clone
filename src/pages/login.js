@@ -32,17 +32,19 @@ const Login = () => {
     }, []);
 
     return (
-        <div className="container flex mx-auto max-w-screen-md items-center h-screen">
-            <div className="flex w-3/5">
+        <div className="container flex flex-col lg:flex-row mx-auto max-w-screen-md items-center h-screen px-4 lg:px-0">
+            <div className="hidden lg:visible lg:flex w-5/5 lg:w-3/5">
                 <img src="images/iphone-with-profile.jpg" alt="iPhone with Instagram app"/>
             </div>
 
-            <div className="flex flex-col w-2/5" >
+            <div className="flex flex-col w-full lg:w-2/5 justify-center h-full max-w-md m-auto" >
                 <div className="flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded">
-                    <h1 className="flex justify-center w-full"><img src="/images/logo.png" alt="Instagram" className="mt-2 w-6/12 mb-4" /></h1>
-                    {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
+                    <h1 className="flex justify-center w-full">
+                        <img src="/images/logo.png" alt="Instagram" className="mt-2 mb-4" />
+                    </h1>
+                    {error && <p data-testid="error" className="mb-4 text-xs text-red-primary">{error}</p>}
 
-                    <form onSubmit={handleLogin} method="POST">
+                    <form onSubmit={handleLogin} method="POST" data-testid="login">
                         <input aria-label="Enter your email address" type="text" placeholder="Email Address" onChange={({ target}) => setEmailAddress(target.value)} value={emailAddress}
                         className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2" />
 
@@ -58,7 +60,7 @@ const Login = () => {
 
                 <div className="flex justify-center items-center flex-col rounded w-full bg-white p-4 border border-gray-primary">
                     <p className="text-sm">Don&apos;t have an account?{` `}
-                        <Link to={ROUTES.SIGN_UP} className="font-bold text-blue-medium">Sign up</Link>
+                        <Link to={ROUTES.SIGN_UP} className="font-bold text-blue-medium" data-testid="sign-up">Sign up</Link>
                     </p>
                 </div>
             </div>

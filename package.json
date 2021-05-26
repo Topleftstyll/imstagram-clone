@@ -23,13 +23,37 @@
     "react-scripts:build": "react-scripts build",
     "start": "run-p watch:css react-scripts:start",
     "build": "run-s build:css react-scripts:build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
+    "e2e": "cypress open",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!<rootDir>/src/App.js",
+      "!<rootDir>/src/wdyr.js",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/fixtures/*.js",
+      "!<rootDir>/src/hooks/*.js",
+      "!<rootDir>/src/helpers/*.js",
+      "!<rootDir>/src/services/firebase*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
     ]
   },
   "browserslist": {
@@ -46,9 +70,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "npm-run-all": "^4.1.5",
+    "cypress": "^7.4.0",
     "eslint": "^7.26.0",
     "eslint-plugin-react": "^7.23.2",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.2.15",
     "postcss-cli": "^8.3.1",
     "prop-types": "^15.7.2",
