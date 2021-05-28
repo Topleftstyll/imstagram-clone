@@ -70,7 +70,7 @@ const SignUp = () => {
 
             <div className="flex flex-col w-full lg:w-2/5 justify-center h-full max-w-md m-auto" >
                 <div className="flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded">
-                    <h1 className="flex justify-center w-full"><img src="/images/logo.png" alt="Instagram" className="mt-2 w-6/12 mb-4" /></h1>
+                    <h1 className="flex justify-center w-full text-4xl mb-5">Insta Clone</h1>
                     <p className="text-sm mb-3 text-red-primary">This is an instagram clone website.</p>
                     {error && <p data-testid="error" className="mb-4 text-xs text-red-primary">{error}</p>}
 
