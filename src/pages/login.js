@@ -43,7 +43,7 @@ const Login = () => {
                         <img src="/images/logo.png" alt="Instagram" className="mt-2 mb-4" />
                         
                     </h1>
-                    <p className="text-sm mb-3">This is an instagram clone website.</p>
+                    <p className="text-sm mb-3 text-red-primary">This is an instagram clone website.</p>
                     {error && <p data-testid="error" className="mb-4 text-xs text-red-primary">{error}</p>}
 
                     <form onSubmit={handleLogin} method="POST" data-testid="login">
